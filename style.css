@@ -1,25 +1,67 @@
 body {
     display: grid;
     justify-items: center;
+    background-image: linear-gradient(45deg, rgb(241, 201, 238), rgb(183, 239, 247));
+    grid-template-areas: 
+    ". . . ."
+    ". buttons squares ."
+    ". . . .";
+}
+
+h3 {
+    font-size: 30px;
+    color: white;
+    mix-blend-mode: difference;
+    line-height: 0;
+}
+
+.buttons {
+    width: 400px;
+    height: 80px;
+    font-size: 30px;
+    border: solid 5px rgb(255, 255, 255);
+    border-radius: 30px;
+
 }
 
 .play-div {
-    border: solid 1px black;
     margin: 0;
     padding: 0;
 }
 
-#main-container {
-    grid-row: 2;
+#buttons-div {
+    margin-top: 150px;
     display: grid;
-    margin: 50px;
+    grid-area: buttons;
+}
+
+#main-container {
+    grid-column: 2;
+    display: grid;
+    margin: 50px 0 50px 0;
     width: 800px;
     height: 800px;
+    border: solid 10px rgb(188, 183, 233);
+    grid-area: squares;
 }
 
 #reset-button {
+    background-color: white;
+    color: black;
+    border: solid 5px black;
     grid-row: 1;
-    width: 300px;
-    height: 40px;
-    font-size: 30px;
+}
+
+#monochrome-button {
+    background: linear-gradient( 
+        90deg,
+        black 50%,
+        white 50%,
+        white
+    );
+    grid-row: 2;
+}
+
+#multicolor-button {
+    grid-row: 3;
 }
