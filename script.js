@@ -1,6 +1,7 @@
 const mainContainer = document.querySelector("#main-container");
 
 function createSquares(number, style) {
+    // Will create new grid based on required style (Black, shadiing, multicolor)
     if (style === "black") {
         for (let i = 1; i <= number ** 2; i++) {
             const playSquare = document.createElement("div");
@@ -9,13 +10,6 @@ function createSquares(number, style) {
             playSquare.className = "play-div";
             playSquare.style.backgroundColor = "hsl(0, 0%, 100%)";
             playSquare.addEventListener("mouseover", () => {
-                // Changes square to random RGB on rollover
-                /* playSquare.style.backgroundColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`; */
-
-                // Decreases square lightness by 10% per rollover
-                /* startingBlack = decreaseHSL(startingBlack);
-                playSquare.style.backgroundColor = `hsl(0, 0%, ${startingBlack}%)`; */
-
                 playSquare.style.backgroundColor = "black";
             });
 
@@ -30,7 +24,6 @@ function createSquares(number, style) {
             playSquare.className = "play-div";
             playSquare.style.backgroundColor = "hsl(0, 0%, 100%)";
             playSquare.addEventListener("mouseover", () => {
-                // Changes square to random RGB on rollover
                 playSquare.style.backgroundColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
             });
 
@@ -64,6 +57,7 @@ function randomRGB() {
 }
 
 function decreaseHSL(input) {
+    //Returns decreased value (-10%) every time it is called for lightness change.
     if (input == 0) {
         return input;
     } else {
@@ -91,23 +85,23 @@ function resetGrid(style) {
 }
 
 function addButtonFunctions() {
-    const resetButton = document.querySelector("#reset-button");
+    const blackButton = document.querySelector("#black-button");
     const multicolorButton = document.querySelector("#multicolor-button");
     const monochromeButton = document.querySelector("#monochrome-button");
     const buttonsDiv = document.querySelector("#buttons-div");
 
-    resetButton.addEventListener("click", () => {
+    blackButton.addEventListener("click", () => {
         resetGrid("black");
     });
-    resetButton.addEventListener("mouseover", () => {
-        resetButton.style.backgroundColor = `black`;
-        resetButton.style.color = "white";
-        resetButton.style.border = "solid 5px white";
+    blackButton.addEventListener("mouseover", () => {
+        blackButton.style.backgroundColor = `black`;
+        blackButton.style.color = "white";
+        blackButton.style.border = "solid 5px white";
     });
-    resetButton.addEventListener("mouseout", () => {
-        resetButton.style.backgroundColor = "white";
-        resetButton.style.color = "black";
-        resetButton.style.border = "solid 5px black";
+    blackButton.addEventListener("mouseout", () => {
+        blackButton.style.backgroundColor = "white";
+        blackButton.style.color = "black";
+        blackButton.style.border = "solid 5px black";
     });
 
     multicolorButton.addEventListener("click", () => {
@@ -137,7 +131,3 @@ function addButtonFunctions() {
 
 addButtonFunctions();
 createSquares(16, "black");
-
-// TO DO: MAKE BUTTON PROMPT USER FOR NUMBER, WHICH IS USED FOR GRID.
-// TO DO: ADD COMMENTS AND STUFF.
-// CHECK ANY OTHER TO DO'S ON THE T.O.P. PAGE.

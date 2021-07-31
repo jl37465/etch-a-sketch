@@ -1,15 +1,31 @@
 body {
     display: grid;
     justify-items: center;
-    background-image: linear-gradient(45deg, rgb(241, 201, 238), rgb(183, 239, 247));
+    background-image: linear-gradient(-45deg, rgb(243, 179, 239), rgb(102, 235, 255));
     grid-template-areas: 
     ". . . ."
     ". buttons squares ."
-    ". . . .";
+    ". footer footer .";
+}
+
+footer {
+    position: fixed;
+    bottom: 1%;
+    left: 37%;
+    grid-area: footer;
 }
 
 h3 {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
+    color: white;
+    mix-blend-mode: difference;
+    line-height: 0;
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
     color: white;
     mix-blend-mode: difference;
     line-height: 0;
@@ -21,7 +37,6 @@ h3 {
     font-size: 30px;
     border: solid 5px rgb(255, 255, 255);
     border-radius: 30px;
-
 }
 
 .play-div {
@@ -45,7 +60,7 @@ h3 {
     grid-area: squares;
 }
 
-#reset-button {
+#black-button {
     background-color: white;
     color: black;
     border: solid 5px black;
